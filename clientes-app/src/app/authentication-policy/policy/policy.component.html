@@ -1,0 +1,76 @@
+<h1 class="mt-4">Policy</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Cadastro policy</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-2">
+        <button type="button" data-toggle="modal"
+        data-target="#modalCadastro" class="btn btn-success">
+               <i class="fa fa-save"></i> Cadastro 
+        </button>
+        
+    </div>
+</div>
+
+<div id="modalCadastro" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Cadastro policy</h4>
+                <a href="#" data-dismiss="modal" (click) = "fechar()">
+                    <i class="far fa-window-close"></i>
+                </a>
+                
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Policy:</label>
+                                <input type="text" class="form-control" [(ngModel)]="policy.name" name="name"/>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>IdGroup:</label>
+                                <input type="text" class="form-control" [(ngModel)]="policy.idGroup" name="idGroup" />
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Description:</label>
+                                <input type="text" class="form-control" [(ngModel)]="policy.descripition" name="descripition"/>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Transection:</label>
+                                <input type="text" class="form-control" [(ngModel)]="policy.transection" name="transection"/>
+                            </div>    
+                        </div>
+                    </div>
+  
+                    <div class="modal-footer" aling="margin-left">
+                        <button class="btn btn-success" (click) = "salvar()">
+                                <i class="fa fa-save"></i> Salvar 
+                        </button>
+
+                        <button class="btn btn-danger" data-dismiss="modal" (click) = "fechar()"> 
+                            <i class="fas fa-window-close"></i>
+                            Cancelar 
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
