@@ -2,6 +2,7 @@ import { AuthenticationPolicyModule } from './authentication-policy/authenticati
 import { ClientesModule } from './clientes/clientes.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { PoliciesService} from './service/policies.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ClientesModule,
     AuthenticationPolicyModule,
     TemplateModule

@@ -23,8 +23,9 @@
                 </a>
                 
             </div>
+            
             <div class="modal-body">
-                <form>
+                <form #policyForm = "ngForm" (ngSubmit)="onSubimit()">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
@@ -59,7 +60,7 @@
                     </div>
   
                     <div class="modal-footer" aling="margin-left">
-                        <button class="btn btn-success" (click) = "salvar()">
+                        <button class="btn btn-success"  type="submit">
                                 <i class="fa fa-save"></i> Salvar 
                         </button>
 

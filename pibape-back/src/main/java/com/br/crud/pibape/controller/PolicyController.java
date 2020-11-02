@@ -8,8 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/policies")
+@CrossOrigin("http://localhost:4200")
 public class PolicyController {
 
     @Autowired
@@ -17,7 +20,7 @@ public class PolicyController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Policy save(@RequestBody Policy policy){
+    public Policy save(@RequestBody @Valid  Policy policy){
         return this.policyService.createOrUpdate(policy);
     }
 

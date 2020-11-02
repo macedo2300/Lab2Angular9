@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Document
 @Getter
@@ -20,6 +21,7 @@ public class AdGroup {
 
     @Indexed(unique = true)
     @NotBlank(message = "Nome é requerido")
+    @NotEmpty(message = "{campo.nome.adgroup.obrigatorio}")
     private String nome;
 
     @Indexed(unique = true)

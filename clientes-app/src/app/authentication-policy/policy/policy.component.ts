@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PoliciesService } from './../../service/policies.service';
 import { Policy } from 'src/app/model/policy.model';
 
 @Component({
@@ -10,7 +11,7 @@ export class PolicyComponent implements OnInit {
 
   policy : Policy;
 
-  constructor() {
+  constructor( public policeService: PoliciesService) {
     this.policy = new Policy();
    }
 
@@ -32,6 +33,15 @@ export class PolicyComponent implements OnInit {
     this.policy.idGroup ='';
     this.policy.descripition ='';
     this.policy.transection = [];
+  }
+  onSubimit() {
+    this.policeService
+            .salvar(this.policy)
+            .subscribe( response =>{
+              console.log(response);
+            }
+
+            )
   }
 
 }
